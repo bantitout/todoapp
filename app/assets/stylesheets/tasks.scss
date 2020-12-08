@@ -1,0 +1,21 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.small_label { 
+    float: left;
+}
+.parent-div
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child-div
+{
+    background: darkgreen;
+    // border: 1px,solid,grey;
+    border: 1px solid grey;
+}

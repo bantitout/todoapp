@@ -1,0 +1,10 @@
+
+<div class="jumbotron m-5">
+  <h1 class="display-4"><%= @user.username %>
+  <p class="lead"><%= @user.email %></p>
+  <hr class="my-4">
+  
+  <%= link_to 'Edit', edit_user_path(@user),class: 'btn btn-info' %>
+  <%= link_to 'Back', users_path,class: 'btn btn-info' %>
+
+</div>

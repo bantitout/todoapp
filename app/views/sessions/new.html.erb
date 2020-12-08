@@ -1,0 +1,13 @@
+<div class = " parent-div bg-white ">
+  <div class = "child-div p-5 w-50 h-50 m-3 parent-div rounded">
+    <div class = "rounded">
+      <div class = " text-info text-center"> <h1> Log-In </h1></div>
+
+        <%= form_with url: sessions_path do |form| %>
+          <%= form.text_field :email,class: "form-control p-4",placeholder: 'Email' %><br>
+          <%= form.text_field :password,class: "form-control p-4 ",placeholder: 'Password' %><br>
+          <%= form.submit "Next",class: "btn btn-primary"%>                    
+        <% end %>
+      </div>
+    </div>
+</div>

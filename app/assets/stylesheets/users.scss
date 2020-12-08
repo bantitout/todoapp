@@ -1,0 +1,36 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.parent-div
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child-div
+{
+    background: lightgrey;
+    // border: 1px,solid,grey;
+    border: 1px solid grey;
+}
+// .border_rad
+//   {
+//       border-radius: .2rem;
+//       padding: .5rem;
+//       margin: .5rem;
+//       border: .1rem solid #ccc;
+//       width: 60%;
+//       font-size: 1.2vw;
+//   }
+.mytab
+{
+  width: 94vw;
+  height: 80vh;
+  margin-top: 1.0rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+

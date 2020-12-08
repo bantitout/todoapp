@@ -1,0 +1,57 @@
+
+
+<div class = "parent-div ">
+    <div class = "child-div  p-5 w-50 pt-1 mt-3 parent-div rounded">
+       <%= form_with(model: [@user, @task], local: true) do |form| %>
+          
+          <div class = "p-2">
+            <%= label_tag 'task name', nil, class: 'small_label'%>
+            <%= form.text_field :task_name,class: 'form-control', placeholder: 'Task name' %>
+          </div>
+          <div class = "p-2" >
+            <%= label_tag 'Task Description ', nil, class: 'small_label'%>
+            <%= form.text_field :task_descption,class: "form-control", placeholder: 'Task Description' %>
+          </div>
+          <div class = "p-2">
+            <%= label_tag 'Start Date', nil, class: 'small_label'%>
+            <%= form.date_field :start_date , class: "form-control"%>
+          </div>
+          <div class = "p-2" >
+             <%= label_tag 'Due Date', nil, class: 'small_label'%>
+             <%= form.date_field :due_date , class: "form-control"%>
+          </div>
+          <div class = "p-2">
+             <%= label_tag 'Estimate Time', nil, class: 'small_label'%>
+            <%= form.text_field :estimate_time,class: 'form-control', placeholder: 'In Hour or Day' %>
+          </div>
+
+          <div class = "p-2" >
+            <%= label_tag 'Priority of Task', nil, class: 'small_label'%>
+            <select name="task[priority_scale]" class = "w-100 form-control">
+              <option value="Low" selected="selected">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class = "p-2" >
+             <%= label_tag 'Current Status', nil, class: 'small_label'%>
+              <select name="task[status]" class = "w-100 form-control">
+                <option value="Not Done" selected="selected">Not Done</option>
+                <option value="Done">Done</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+          </div>
+
+          <div class = "p-2" >
+             <%= label_tag 'publish your post as', nil, class: 'small_label'%>
+              <select name="task[ispublic]" class = "w-100 form-control">
+                <option value= true selected="selected">Public</option>
+                <option value= false >Private</option>               
+              </select>
+          </div>
+          <h4 class = "pl-2"><%= form.submit "Submit",class: "btn btn-primary" %></h4>
+        
+        <% end %>
+     
+    </div>
+  </div>

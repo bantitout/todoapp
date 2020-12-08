@@ -1,0 +1,28 @@
+
+
+
+  <div class = "parent-div ">
+    <div class = "child-div  p-5 w-50 h-75 m-3 parent-div rounded">
+      <div class = "rounded ">
+      <div class = "px-4 text-info text-center"> <h1> Ragistration </h1></div>
+        <%= form_with(model: @user, local: true) do |form| %>
+          <div class = "p-2">
+            <%= form.text_field :username,class: 'form-control', placeholder: 'user name' %>
+          </div>
+          <div class = "p-2" >
+            <%= form.text_field :email,class: "form-control", placeholder: 'email' %>
+          </div>
+          <div class = "p-2" >
+            <%= form.password_field :password,class: "form-control", placeholder: 'Password' %> <br>
+            <%= form.password_field :password_confirmation,class: "form-control", placeholder: 'Confirm' %>
+          </div>
+
+          <div class = "p-2">
+            
+          </div>
+          <h4 class = "pl-2"><%= form.submit "Submit",class: "btn btn-primary" %></h4>
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
