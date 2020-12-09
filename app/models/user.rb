@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :tasks,dependent: :destroy
   has_secure_password
-  validates :username,
-            presence: true
+  validates_presence_of   :username, :message => 'Please Enter User  Name.'
+  validates_presence_of   :password, :message => 'Please Enter Password.'
   validates :email,
             presence: true,
             uniqueness: true,

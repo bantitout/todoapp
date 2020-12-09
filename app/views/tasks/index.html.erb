@@ -25,8 +25,13 @@
         <td><%= task.due_date %></td>
         <td><%= task.estimate_time %></td>
         <td><%= task.priority_scale %></td>        
-         <td><%= task.status %></td>
-          <td><%= task.ispublic %></td>
+        <td><%= task.status %></td>        
+        <td> <% if task.ispublic %>
+               <%= render plain: 'Public' %>
+             <% else %>
+               <%= render plain: 'Private' %>
+             <% end %>
+        </td>
         <td><%= link_to 'Edit', edit_user_task_path(@user, task),class: "btn btn-primary" %></td>
         <td><%= link_to 'Delete', [@user, task],class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

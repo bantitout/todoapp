@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :get_user
+  before_action :get_user, except: :dashboard
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,7 +8,7 @@ class TasksController < ApplicationController
 
   def dashboard
     @dashboard = Task.where(ispublic: true)
-
+    
   end
   
   
@@ -55,7 +55,6 @@ private
   end   
 
   def set_task
-    @myuser = @user.find_by(ispublic: true)
     @task = @user.tasks.find(params[:id])
   end 
 

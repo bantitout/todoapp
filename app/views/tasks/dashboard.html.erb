@@ -1,1 +1,31 @@
-here we go
+<div class = "mytab container">
+<h1>List of task</h1>
+
+<table class = "table table-striped table-bordered ">
+  <thead  class="thead-dark">
+    <tr>
+      <th>Task name</th>
+      <th>Task descption</th>
+      <th>Start date</th>
+      <th>Due date</th>
+       <th>Estimate time</th>
+      <th>Priority scale</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dashboard.each do |task| %>
+      <tr>
+        <td><%= task.task_name %></td>
+        <td><%= task.task_descption %></td>
+        <td><%= task.start_date %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.estimate_time %></td>
+        <td><%= task.priority_scale %></td>        
+        <td><%= task.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

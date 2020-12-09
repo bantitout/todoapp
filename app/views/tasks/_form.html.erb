@@ -1,24 +1,24 @@
 
 
 <div class = "parent-div ">
-    <div class = "child-div  p-5 w-50 pt-1 mt-3 parent-div rounded">
+    <div class = "child-div w-50 pt-1 mt-5 rounded">
        <%= form_with(model: [@user, @task], local: true) do |form| %>
           
-          <div class = "p-2">
+          <div class = "p-2 mt-1">
             <%= label_tag 'task name', nil, class: 'small_label'%>
-            <%= form.text_field :task_name,class: 'form-control', placeholder: 'Task name' %>
+            <%= form.text_field :task_name, required: true,class: 'form-control', placeholder: 'Task name' %>
           </div>
           <div class = "p-2" >
             <%= label_tag 'Task Description ', nil, class: 'small_label'%>
-            <%= form.text_field :task_descption,class: "form-control", placeholder: 'Task Description' %>
+            <%= form.text_field :task_descption, required: true,class: "form-control", placeholder: 'Task Description' %>
           </div>
           <div class = "p-2">
             <%= label_tag 'Start Date', nil, class: 'small_label'%>
-            <%= form.date_field :start_date , class: "form-control"%>
+            <%= form.date_field :start_date , required: true, class: "form-control"%>
           </div>
           <div class = "p-2" >
              <%= label_tag 'Due Date', nil, class: 'small_label'%>
-             <%= form.date_field :due_date , class: "form-control"%>
+             <%= form.date_field :due_date , required: true, class: "form-control"%>
           </div>
           <div class = "p-2">
              <%= label_tag 'Estimate Time', nil, class: 'small_label'%>

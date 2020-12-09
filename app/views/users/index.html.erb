@@ -15,6 +15,15 @@
 
   <tbody>
     <% @users.each do |user| %>
+    <% if user.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+   <%end%>
+   
       <tr>
         <td ><%= user.username %></td>
         <td><%= user.email %></td>

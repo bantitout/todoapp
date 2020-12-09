@@ -3,10 +3,10 @@
     <div class = "rounded">
       <div class = " text-info text-center"> <h1> Log-In </h1></div>
 
-        <%= form_with url: sessions_path do |form| %>
-          <%= form.text_field :email,class: "form-control p-4",placeholder: 'Email' %><br>
-          <%= form.text_field :password,class: "form-control p-4 ",placeholder: 'Password' %><br>
-          <%= form.submit "Next",class: "btn btn-primary"%>                    
+        <%= form_with url: sessions_path do |form| %>          
+            <%= form.text_field :email, required: true,class: "form-control p-4",placeholder: 'Email' %><br>
+            <%= form.text_field :password, required: true,class: "form-control p-4 ",placeholder: 'Password' %><br>
+            <%= form.submit "Submit",class: "btn btn-primary"%>                    
         <% end %>
       </div>
     </div>
