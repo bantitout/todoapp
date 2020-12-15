@@ -10,6 +10,7 @@ require("channels")
 require("jquery")
 
 
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -18,3 +19,10 @@ require("jquery")
 // const imagePath = (name) => images(name, true)
 //= require bootstrap-datepicker
 //= require jquery-ui
+//= require bootstrap-modal
+
+document.addEventListener("turbolinks:load", function() {
+    $("body").on("change", ".ajax-input", function() {
+      Rails.fire(this.form, "submit");
+    });
+  });

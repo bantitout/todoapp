@@ -1,8 +1,8 @@
 
 
-<div class = "parent-div ">
-    <div class = "child-div w-50 pt-1 mt-5 rounded">
-       <%= form_with(model: [@user, @task], local: true) do |form| %>
+
+    <div class = "child-div w-100 h-100 rounded">
+       <%= form_with(model: [@user, @task], remote: true) do |form| %>
           
           <div class = "p-2 mt-1">
             <%= label_tag 'task name', nil, class: 'small_label'%>
@@ -49,9 +49,9 @@
                 <option value= false >Private</option>               
               </select>
           </div>
-          <h4 class = "pl-2"><%= form.submit "Submit",class: "btn btn-primary" %></h4>
+          <h4 class = "pl-2 baba"><%= form.submit "Submit",class: "btn btn-primary stds" %></h4>
         
         <% end %>
      
     </div>
-  </div>
+

@@ -1,10 +1,5 @@
+$("#modal-window").find(".modal-content").append("<%= j (render 'new') %>");
+$("#modal-window").modal().remove();
 
-      $(document).ready(function(){
-        $('.datepicker').datepicker({
-          format: "yyyy/mm/dd",
-          autoclose: true,
-          todayBtn: "linked",
-          todayHighlight': true
-        });
-      });
-   
+
+

@@ -20,32 +20,48 @@ class TasksController < ApplicationController
   end
  
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @task = @user.tasks.build(task_params)
+    
+    respond_to do |format|
       if @task.save
-        redirect_to user_tasks_path(@user)  
+        @tasks = @user.tasks.order("created_at DESC")
+        format.js
+        format.html { redirect_to user_tasks_path(@user), notice: 'user was successfully created'}  
       else
-        render 'new'
+        format.html { render :new }
       end
+    end
   end
 
   def update
+    
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to user_tasks_path(@user), notice: 'task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
+        @tasks = @user.tasks.order("created_at DESC")
+        format.html { redirect_to user_tasks_path(@user), notice: 'task was successfully updated.' }            
+        format.js
       else
-        format.html { render :edit }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        render :edit      
       end
     end
   end
 
   def destroy
+    @task = Task.find(params[:id])
     @task.destroy
-    redirect_to user_tasks_path(@user)
+    respond_to do |format|
+      format.html {  redirect_to user_tasks_path(@user) }
+      format.json { head :no_content , notice: 'task was successfully updated.' }
+      format.js
+      
+    end
   end
 
 private
