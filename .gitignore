@@ -7,17 +7,6 @@
 
 .browserslistrc
 postcss.config.js
-public/
-storage/
-test/
-tmp/
-vendor/
-yarn.lock
-lib/
-log/
-README.md
-Rakefile
-.ruby-version
 
 # Ignore bundler config.
 /.bundle
